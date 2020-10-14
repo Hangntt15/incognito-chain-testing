@@ -189,22 +189,22 @@ func (tradingSuite *TnTradingTestSuite) SetupSuite() {
 
 	tradingSuite.ETHHost = "https://kovan.infura.io/v3/12047eb6d7e6439fa3449d00c7694a12"
 
-	tradingSuite.IncBridgeHost = "http://51.83.36.184:20002" //testnet 1
-	tradingSuite.IncRPCHost = "http://51.83.36.184:20002"    //testnet 1
+	// tradingSuite.IncBridgeHost = "http://51.83.36.184:20002" //testnet 1
+	// tradingSuite.IncRPCHost = "http://51.83.36.184:20002"    //testnet 1
 
-	// tradingSuite.IncBridgeHost = "http://51.161.119.66:9334" // testnet 2
-	// tradingSuite.IncRPCHost = "http://51.161.119.66:9334"    // testnet 2
+	tradingSuite.IncBridgeHost = "http://51.161.119.66:9334" // testnet 2
+	tradingSuite.IncRPCHost = "http://51.161.119.66:9334"    // testnet 2
 
 	// tradingSuite.UniswapRouteContractAddr = common.HexToAddress("0xf164fC0Ec4E93095b804a4795bBe1e041497b92a")
 	// tradingSuite.KyberContractAddr = common.HexToAddress("0x692f391bCc85cefCe8C237C01e1f636BbD70EA4D")
 
-	tradingSuite.UniswapTradeDeployedAddr = common.HexToAddress("0x7783C8c5AEC5cBFEF7311b4F4F33302DA6624d69") //testnet 1
-	// tradingSuite.UniswapTradeDeployedAddr = common.HexToAddress("0x39017F874291D5d8Aaec9de07E04f5f8047B1C9d") //testnet 2
+	// tradingSuite.UniswapTradeDeployedAddr = common.HexToAddress("0x7783C8c5AEC5cBFEF7311b4F4F33302DA6624d69") //testnet 1
+	tradingSuite.UniswapTradeDeployedAddr = common.HexToAddress("0x39017F874291D5d8Aaec9de07E04f5f8047B1C9d") //testnet 2
 
-	tradingSuite.VaultAddr = common.HexToAddress("0xE0D5e7217c6C4bc475404b26d763fAD3F14D2b86") //testnet 1
-	// tradingSuite.VaultAddr = common.HexToAddress("0x7c7e371D1e25771f2242833C1A354dCE846f3ec8") // testnet 2
-	tradingSuite.KyberTradeDeployedAddr = common.HexToAddress("0xDD71ba9f17172a23F3e70ed70FFB96Fb403e4527") // testnet 1
-	// tradingSuite.KyberTradeDeployedAddr = common.HexToAddress("0x18c1C19b31b08407633776AB24B26Cfac137099d") // testnet 2
+	// tradingSuite.VaultAddr = common.HexToAddress("0xE0D5e7217c6C4bc475404b26d763fAD3F14D2b86") //testnet 1
+	tradingSuite.VaultAddr = common.HexToAddress("0x7c7e371D1e25771f2242833C1A354dCE846f3ec8") // testnet 2
+	// tradingSuite.KyberTradeDeployedAddr = common.HexToAddress("0xDD71ba9f17172a23F3e70ed70FFB96Fb403e4527") // testnet 1
+	tradingSuite.KyberTradeDeployedAddr = common.HexToAddress("0x18c1C19b31b08407633776AB24B26Cfac137099d") // testnet 2
 
 	// generate a new keys pair for SC
 	tradingSuite.genKeysPairForSC()
