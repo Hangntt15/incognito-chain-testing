@@ -38,11 +38,10 @@ import (
 )
 
 const (
-	ethWaitTn    = 5
+	ethWaitTn     = 5
 	confirmWaitTn = 80
 	incWaitTn     = 100
 )
-
 
 type TnIssuingETHRes struct {
 	rpccaller.RPCBaseRes
@@ -61,7 +60,6 @@ type TnBalanceIncAccount struct {
 type TnTxhashInC struct {
 	Result interface{} `json:"Result"`
 }
-
 
 // Define the suite, and absorb the built-in basic suite
 // functionality from testify - including assertion methods.
@@ -146,8 +144,8 @@ func (tradingSuite *TnTradingTestSuite) SetupSuite() {
 
 	// 0x kovan env
 	tradingSuite.IncBurningAddrStr = "12RxahVABnAVCGP3LGwCn8jkQxgw7z1x14wztHzn455TTVpi1wBq9YGwkRMQg3J4e657AbAnCvYCJSdA9czBUNuCKwGSRQt55Xwz8WA"
-	tradingSuite.IncPrivKeyStr = "112t8rnX3VTd3MTWMpfbYP8HGY4ToAaLjrmUYzfjJBrAcb8iPLkNqvVDXWrLNiFV5yb2NBpR3FDZj3VW8GcLUwRdQ61hPMWP3YrREZAZ1UbH"
-	tradingSuite.IncPaymentAddrStr = "12S6R8HfTyL74bggg47LX88RSvBPaMPBMEMoo6yx9WQ4EgLiYERXXcE2Mv2HrCsFuKhBsTfrYMeH82Bus5MHQGt3xHwoxX4v2qM5jRE"
+	tradingSuite.IncPrivKeyStr = "112t8rnX5E2Mkqywuid4r4Nb2XTeLu3NJda43cuUM1ck2brpHrufi4Vi42EGybFhzfmouNbej81YJVoWewJqbR4rPhq2H945BXCLS2aDLBTA"
+	tradingSuite.IncPaymentAddrStr = "12RxERBySmquLtM1R1Dk2s7J4LyPxqHxcZ956kupQX3FPhVo2KtoUYJWKet2nWqWqSh3asWmgGTYsvz3jX73HqD8Jr2LwhjhJfpG756"
 	// tradingSuite.IncPrivKeyStr = "112t8rnhdyiruPke58LNeqwpzxn3cGQsfnS4dqec6P9HWPwNH7VKPgdXw9svDXp5djM4mQrMZnxwW7sjk5NLBkHXC3pJHBMsoqJi8sNUd47G"
 	// tradingSuite.IncPaymentAddrStr = "12S4HcgzM2zQeq41Bh9w8Ce5YETiQitoTZmTjCHLvvbwmoy8S9Py66wBjCqTgziWPbMpWEWPA2jRabwDmTk2TYV4nAzBN3SwjYN4zfE"
 
@@ -189,28 +187,24 @@ func (tradingSuite *TnTradingTestSuite) SetupSuite() {
 	tradingSuite.DAIAddressStr = "0x4f96fe3b7a6cf9725f59d353f723c1bdb64ca6aa" // DAI
 	tradingSuite.SAIAddressStr = "0xc4375b7de8af5a38a93548eb8453a498222c4ff2" //SAI
 
-	tradingSuite.ETHHost = "https://kovan.infura.io/v3/93fe721349134964aa71071a713c5cef"
+	tradingSuite.ETHHost = "https://kovan.infura.io/v3/12047eb6d7e6439fa3449d00c7694a12"
 
-	// tradingSuite.IncBridgeHost = "http://51.83.36.184:20002" //testnet 1
-	// tradingSuite.IncRPCHost = "http://51.83.36.184:20002"    //testnet 1
+	tradingSuite.IncBridgeHost = "http://51.83.36.184:20002" //testnet 1
+	tradingSuite.IncRPCHost = "http://51.83.36.184:20002"    //testnet 1
 
-	// tradingSuite.IncBridgeHost = "http://51.79.76.116:20003"  	//beacon test
-	// tradingSuite.IncRPCHost = "http://51.79.76.116:20003"		//beacon test
+	// tradingSuite.IncBridgeHost = "http://51.161.119.66:9334" // testnet 2
+	// tradingSuite.IncRPCHost = "http://51.161.119.66:9334"    // testnet 2
 
-	tradingSuite.IncBridgeHost = "http://51.161.119.66:9334" // testnet 2
-	tradingSuite.IncRPCHost = "http://51.161.119.66:9334"    // testnet 2
-
-	
 	// tradingSuite.UniswapRouteContractAddr = common.HexToAddress("0xf164fC0Ec4E93095b804a4795bBe1e041497b92a")
 	// tradingSuite.KyberContractAddr = common.HexToAddress("0x692f391bCc85cefCe8C237C01e1f636BbD70EA4D")
 
-	// tradingSuite.UniswapTradeDeployedAddr = common.HexToAddress("0x7783C8c5AEC5cBFEF7311b4F4F33302DA6624d69") //testnet 1
-	tradingSuite.UniswapTradeDeployedAddr = common.HexToAddress("0x39017F874291D5d8Aaec9de07E04f5f8047B1C9d") //testnet 2
+	tradingSuite.UniswapTradeDeployedAddr = common.HexToAddress("0x7783C8c5AEC5cBFEF7311b4F4F33302DA6624d69") //testnet 1
+	// tradingSuite.UniswapTradeDeployedAddr = common.HexToAddress("0x39017F874291D5d8Aaec9de07E04f5f8047B1C9d") //testnet 2
 
-// tradingSuite.VaultAddr = common.HexToAddress("0xE0D5e7217c6C4bc475404b26d763fAD3F14D2b86") //testnet 1
-tradingSuite.VaultAddr = common.HexToAddress("0x7c7e371D1e25771f2242833C1A354dCE846f3ec8") // testnet 2
-	// tradingSuite.KyberTradeDeployedAddr = common.HexToAddress("0xDD71ba9f17172a23F3e70ed70FFB96Fb403e4527")      // testnet 1
-	tradingSuite.KyberTradeDeployedAddr = common.HexToAddress("0x18c1C19b31b08407633776AB24B26Cfac137099d") // testnet 2
+	tradingSuite.VaultAddr = common.HexToAddress("0xE0D5e7217c6C4bc475404b26d763fAD3F14D2b86") //testnet 1
+	// tradingSuite.VaultAddr = common.HexToAddress("0x7c7e371D1e25771f2242833C1A354dCE846f3ec8") // testnet 2
+	tradingSuite.KyberTradeDeployedAddr = common.HexToAddress("0xDD71ba9f17172a23F3e70ed70FFB96Fb403e4527") // testnet 1
+	// tradingSuite.KyberTradeDeployedAddr = common.HexToAddress("0x18c1C19b31b08407633776AB24B26Cfac137099d") // testnet 2
 
 	// generate a new keys pair for SC
 	tradingSuite.genKeysPairForSC()
@@ -222,25 +216,25 @@ tradingSuite.VaultAddr = common.HexToAddress("0x7c7e371D1e25771f2242833C1A354dCE
 }
 
 func (tradingSuite *TnTradingTestSuite) TearDownSuite() {
-	fmt.Println("Tearing down the suite...")
+	fmt.Println("Tearing down the suite: TnTradingTestSuite")
 	tradingSuite.ETHClient.Close()
 }
 
 func (tradingSuite *TnTradingTestSuite) SetupTest() {
-	fmt.Println("Setting up the test...")
+	fmt.Println("Setting up the test: TnTradingTestSuite")
 }
 
 func (tradingSuite *TnTradingTestSuite) TearDownTest() {
-	fmt.Println("Tearing down the test...")
+	fmt.Println("Tearing down the test: TnTradingTestSuite")
 }
 
 func TestTnTradingTestSuite(t *testing.T) {
-	fmt.Println("Starting entry point for test suite...")
+	fmt.Println("Starting entry point for test suite: TestTnTradingTestSuite")
 
 	tradingSuite := new(TnTradingTestSuite)
 	suite.Run(t, tradingSuite)
 
-	fmt.Println("Finishing entry point for test suite...")
+	fmt.Println("Finishing entry point for test suite: TestTnTradingTestSuite")
 }
 
 func (tradingSuite *TnTradingTestSuite) getBalanceOnETHNet(
@@ -269,7 +263,7 @@ func (tradingSuite *TnTradingTestSuite) connectToETH() {
 	fmt.Printf("Sign Txs with address: %s\n", crypto.PubkeyToAddress(privKey.PublicKey).Hex())
 
 	network := "development"
-	fmt.Printf("Connecting to network %s\n", network)
+	fmt.Printf("Connecting to network: %s\n", network)
 	client, err := ethclient.Dial(tradingSuite.ETHHost)
 	require.Equal(tradingSuite.T(), nil, err)
 
@@ -757,7 +751,7 @@ func (tradingSuite *TnTradingTestSuite) executeWithKyber(
 }
 
 func (tradingSuite *TnTradingTestSuite) Test1DepositAndWithdrwaEther() {
-//return
+	//return
 	fmt.Println("============ TEST 1 DEPOSIT AND WITHDRAW ETHER ===========")
 	fmt.Println("------------ STEP 0: declaration & initialization --------------")
 	tradeAmount := big.NewInt(int64(tradingSuite.DepositingEther * params.Ether))
@@ -941,7 +935,7 @@ func (tradingSuite *TnTradingTestSuite) Test1DepositAndWithdrwaEther() {
 }
 
 func (tradingSuite *TnTradingTestSuite) Test2TradeEthForUSDC() {
-return
+	return
 	fmt.Println("============ TEST 2 TRADE ETHER FOR USDC WITH Uniswap AGGREGATOR ===========")
 	fmt.Println("------------ STEP 0: declaration & initialization --------------")
 	tradeAmount := big.NewInt(int64(tradingSuite.DepositingEther * params.Ether))
@@ -1146,7 +1140,7 @@ return
 }
 
 func (tradingSuite *TnTradingTestSuite) Test3DepositAndWithdrwatokenUSDC() {
-//return
+	return
 	fmt.Println("============ TEST 3 DEPOSIT AND WITHDRAW ERC20 TOKEN (USDC) ===========")
 	fmt.Println("------------ STEP 0: declaration & initialization --------------")
 
@@ -1337,7 +1331,7 @@ func (tradingSuite *TnTradingTestSuite) Test3DepositAndWithdrwatokenUSDC() {
 }
 
 func (tradingSuite *TnTradingTestSuite) Test4TradeEthForKNCWithKyber() {
- return
+	return
 	fmt.Println("============ TEST 4 TRADE ETHER FOR KNC WITH Kyber AGGREGATOR ===========")
 	fmt.Println("------------ STEP 0: declaration & initialization --------------")
 	tradeAmount := big.NewInt(int64(tradingSuite.DepositingEther * params.Ether))
@@ -1543,5 +1537,3 @@ func (tradingSuite *TnTradingTestSuite) Test4TradeEthForKNCWithKyber() {
 	)
 	fmt.Println("ETH balance after trade: ", balEth)
 }
-
-

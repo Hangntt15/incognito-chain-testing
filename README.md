@@ -30,4 +30,6 @@ https://linuxize.com/post/how-to-install-python-3-7-on-ubuntu-18-04/
 sudo rm /usr/bin/python3; sudo ln -s python3.7 /usr/bin/python3
 https://linuxize.com/post/how-to-install-pip-on-ubuntu-18.04/
 
+ watch 'ps -ef | grep ".*\([h]ighway\|[i]ncog\).*" | grep thach | grep -v grep'
 ```
+
